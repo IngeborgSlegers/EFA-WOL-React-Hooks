@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import APIURL from '../helpers/environment';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
 import moment from 'moment';
 
@@ -14,7 +15,7 @@ const WorkoutEdit = (props) => {
   const workoutUpdate = (event) => {
     // console.log('workout', workout);
     event.preventDefault();
-    fetch(`http://localhost:3000/log/${props.workoutToUpdate.id}`, {
+    fetch(`${APIURL}log/${props.workoutToUpdate.id}`, {
       method: 'PUT',
       body: JSON.stringify({
         log: {
