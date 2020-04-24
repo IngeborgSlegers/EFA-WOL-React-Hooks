@@ -43,6 +43,7 @@ const WorkoutIndex = (props) => {
     fetchWorkouts();
   }, [])
 
+  console.log(workouts)
 
  return(
    <div>
@@ -52,7 +53,7 @@ const WorkoutIndex = (props) => {
           <WorkoutCreate fetchWorkouts={fetchWorkouts} token={props.token} />
         </Col>
         <Col md="9">
-          <WorkoutTable workouts={workouts} editUpdateWorkout={editUpdateWorkout} updateOn={updateOn} fetchWorkouts={fetchWorkouts} token={props.token}/>
+          {(workouts.length) ? <WorkoutTable workouts={workouts} editUpdateWorkout={editUpdateWorkout} updateOn={updateOn} fetchWorkouts={fetchWorkouts} token={props.token}/> : <h1>Log a workout!</h1>}
         </Col>
         {updateActive ? <WorkoutEdit workoutToUpdate={workoutToUpdate} updateOff={updateOff} token={props.token} fetchWorkouts={fetchWorkouts} /> : <div></div>}
       </Row>

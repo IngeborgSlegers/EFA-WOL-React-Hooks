@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
-import {     Collapse,
+import {     
+  Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
-  Button} from 'reactstrap';
+  Button
+} from 'reactstrap';
 
 const Sitebar = (props) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
-    let newIsOpen = !isOpen;
-    setIsOpen(newIsOpen);
+    setIsOpen(!isOpen);
   }
 
   return(
