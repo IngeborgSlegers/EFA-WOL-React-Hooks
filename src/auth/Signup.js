@@ -26,8 +26,8 @@ const Signup = (props) => {
     }).then(
         (response) => response.json()
     ).then((data) => {
-      console.log('data', data, 'sessionToken', data.token)
-      props.updateToken(data.token)
+      console.log('data', data, 'sessionToken', data.sessionToken)
+      props.updateToken(data.sessionToken)
     })
   }
 
